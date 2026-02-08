@@ -34,8 +34,7 @@ Publishing to the Microsoft Store requires a developer license and related costs
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
 
-👉 https://your-donation-link-here.com
-
+👉 https://ko-fi.com/colorwall
 Community support directly helps with licensing, signing certificates, and long-term development.
 
 Transparency and community collaboration remain long-term goals of this project.
@@ -134,6 +133,7 @@ Designed for performance and bandwidth efficiency:
 ![Preview](assets/updatedmodal.PNG)
 
 </div>
+
 
 
 
