@@ -1,11 +1,13 @@
 <div align="center">
-
+  
+![Preview](thecolorwall.png)
+---
 # ColorWall
 
 ### A Free Wallpaper Engine Alternative Built in Rust  
 **Designed for Performance • Optimization Enthusiasts • Everyday Users • Low-Spec PCs**
 
-![Preview](thecolorwall.png)
+
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)](https://www.rust-lang.org)
 [![Tauri](https://img.shields.io/badge/Tauri-FFC131?style=flat-square&logo=tauri&logoColor=black)](https://tauri.app)
@@ -18,7 +20,7 @@
 
 [Download](#-installation) • [✨ Features](#-features) • [Screenshots](#-screenshots) • [Build](#-build-from-source)
 
-![Preview](thecolorwall.png)
+
 
 </div>
 
@@ -132,5 +134,6 @@ Designed for performance and bandwidth efficiency:
 ![Preview](assets/updatedmodal.PNG)
 
 </div>
+
 
 
