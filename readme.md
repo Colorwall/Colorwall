@@ -18,7 +18,7 @@
 
 [Download](#-installation) • [✨ Features](#-features) • [Screenshots](#-screenshots) • [Build](#-build-from-source)
 
-![Preview](assets/Capture.PNG)
+![Preview](thecolorwall.png)
 
 </div>
 
@@ -132,3 +132,4 @@ Designed for performance and bandwidth efficiency:
 ![Preview](assets/updatedmodal.PNG)
 
 </div>
+
