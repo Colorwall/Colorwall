@@ -1,6 +1,7 @@
 <div align="center">
   
-![Preview](thecolorwall.png)
+<img width="1536" height="1024" alt="LxColorWall" src="https://github.com/user-attachments/assets/a0455f0b-c580-4904-a8a1-da9680bf16d3" />
+
 ---
 # ColorWall
 
@@ -133,6 +134,7 @@ Designed for performance and bandwidth efficiency:
 ![Preview](assets/updatedmodal.PNG)
 
 </div>
+
 
 
 
