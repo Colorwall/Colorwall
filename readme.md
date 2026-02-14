@@ -114,8 +114,6 @@ Designed for performance and bandwidth efficiency:
 | :--- | :--- |
 | ![Windows](assets/windows.PNG) **Windows** | [Download .exe](https://github.com/colorwall/colorwall/releases/latest) |
 
-[📦 View All Releases](https://github.com/colorwall/colorwall/releases)
-
 </div>
 
 ---
@@ -134,6 +132,7 @@ Designed for performance and bandwidth efficiency:
 ![Preview](assets/updatedmodal.PNG)
 
 </div>
+
 
 
 
