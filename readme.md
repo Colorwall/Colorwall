@@ -7,7 +7,7 @@
 
 ### A Free Wallpaper Engine Alternative Built in Rust  
 **Designed for Performance • Optimization Enthusiasts • Everyday Users • Low-Spec PCs**
-
+Under Dev
 
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)](https://www.rust-lang.org)
@@ -35,7 +35,7 @@ Publishing to the Microsoft Store requires a developer license and related costs
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
 
-👉 https://ko-fi.com/colorwall
+👉 https://ko-fi.com/laxenta
 Community support directly helps with licensing, signing certificates, and long-term development.
 
 Transparency and community collaboration remain long-term goals of this project.
@@ -117,21 +117,6 @@ Designed for performance and bandwidth efficiency:
 </div>
 
 ---
-
-## Screenshots
-
-<div align="center">
-
-### Static Wallpaper Store  
-![Gallery](assets/static.PNG)
-
-### Live Wallpaper Store  
-![Filters](assets/nofeet.PNG)
-
-### Live Preview Modal with Video Player  
-![Preview](assets/updatedmodal.PNG)
-
-</div>
 
 
 
