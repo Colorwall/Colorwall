@@ -28,10 +28,10 @@ Under Dev
 ---
 
 ## 📂 Source Code Status
-
-ColorWall is currently closed-source as in today's world of A.I, anyone can copy a working logic and change the front-end. 
-
-Publishing to the Microsoft Store requires a developer license and related costs, which we are currently self-funding. To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
+ColorWall is TEMPROARILY closed-source as in today's time of A.I, anyone can copy a working logic and change the front-end. 
+We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time
+and we want to ensure that we establish our certificates and things first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs. 
+- To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
 
@@ -61,7 +61,7 @@ Transparency and community collaboration remain long-term goals of this project.
 
 ---
 
-## ✨ Features
+## Features
 
 ### Live Video Wallpapers
 
@@ -93,28 +93,12 @@ Designed for performance and bandwidth efficiency:
 
 ### Windows
 
-1. Download `ColorWall-Setup.exe` from the [Latest Release](https://github.com/laxenta/WallpaperEngine/releases/latest).
+1. Download `ColorWall-Setup.exe` from the [Latest Release]([https://github.com/Colorwall/Colorwall/releases/latest).
 2. Run the installer.
 
 > **SmartScreen Notice:**  
 > If a “Windows protected your PC” message appears, select **More info → Run anyway**.  
 > The application is not code-signed due to certificate costs. The project is fully open source.
-
----
-
-### Linux & macOS
-
-- **Linux:** Currently untested
-- **macOS:** Not supported yet
-- Additional platform support is planned
-
-<div align="center">
-
-| Platform | Download |
-| :--- | :--- |
-| ![Windows](assets/windows.PNG) **Windows** | [Download .exe](https://github.com/colorwall/colorwall/releases/latest) |
-
-</div>
 
 ---
 
