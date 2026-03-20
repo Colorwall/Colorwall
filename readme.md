@@ -1,13 +1,13 @@
 <div align="center">
   
 <img width="1536" height="1024" alt="LxColorWall" src="https://github.com/user-attachments/assets/a0455f0b-c580-4904-a8a1-da9680bf16d3" />
-
+[colorwall.xyz](https://colorwall.xyz)
 ---
 # ColorWall
 
 ### A Free Wallpaper Engine Alternative Built in Rust  
 **Designed for Performance • Optimization Enthusiasts • Everyday Users • Low-Spec PCs**
-Under Dev
+Under Dev 
 
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)](https://www.rust-lang.org)
