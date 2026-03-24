@@ -34,7 +34,7 @@ ColorWall is currently closed-source bcz we don't need some looser to steal it a
 We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time. Respectfully, fuck off to vibe coders who i know will copy this in a heartbeat.
 So  we want to ensure that we establish our certificates and **recoganization** first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs. 
 ## We are not fucking Jesus to not want anything for providing a whole desktop costumization engine, the least we need is recoganization :< 
-### code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything instantly, like i am literally 18 brother, studying to be a cop and in collage too >.<
+- code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything instantly, like i am literally 18 brother, studying to be a cop and in collage too >.<
 - To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
