@@ -4,7 +4,7 @@
 
 ---
 # ColorWall
-[FEEDBACK](https://www.colorwall.xyz/FEEDBACK)
+[DOES THY WANT TO GIVE FEEDBACK? HERE <.3](https://www.colorwall.xyz/FEEDBACK)
 ## https://www.colorwall.xyz
 
 ### A Highly Performant Wallpaper Engine Built in Rust/Tauri, No bloat, Desktop costumization In One place for no cost.
