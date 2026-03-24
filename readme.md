@@ -78,7 +78,7 @@ Transparency and community collaboration remain long-term goals of this project.
 - Interactive wallpapers with music supports.
 - Clear and accessible settings
 - Multi Monitor support
-- Proper thread and access violation fixes with the best possible ui unmounting i knew, to give the best ui i could and also make it take no resources when it's hidden in systray <.3
+- Proper thread and access violation fixes (we use multithreading now, simple flag), along with the best possible ui unmounting i knew, to give the best ui i could and also make it take no resources when it's hidden in systray <.3
 - Automatic power-saving: pauses video when windows are maximized or focused
 - **Unified Search**: retrieve results from all sources in a single query
 
