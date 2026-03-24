@@ -16,9 +16,9 @@ Under Dev
 [![Release](https://img.shields.io/github/v/release/laxenta/WallpaperEngine?style=flat-square&color=blue)](https://github.com/laxenta/WallpaperEngine/releases)
 [![License](https://img.shields.io/github/license/laxenta/WallpaperEngine?style=flat-square)](LICENSE)
 
-> **~0.5% CPU / 3–8% GPU • 4K Video Wallpapers • 6+ Auto-Scraped Sources • Perf/Ultra Rendering Engines**  
+> **3–8% GPU Usage on a low end IGPU • 4KVsync Video Wallpapers • 9+ Auto-Scraped Sources • Perf/Ultra Rendering Engines**  
 >
-> *No infrastructure required — the application runs locally and works fully offline.*
+> *No infrastructure required, the application runs locally and works fully offline if u keep stuff in store or upload your own, Store will not work when offline*
 
 [Download](#-installation) • [✨ Features](#-features) • [Screenshots](#-screenshots) • [Build](#-build-from-source)
 
