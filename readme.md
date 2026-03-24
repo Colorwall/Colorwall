@@ -71,13 +71,13 @@ Transparency and community collaboration remain long-term goals of this project.
 - **4K Vsync** video wallpapers at approximately **0.5% CPU / 1–10% GPU** (Uses direct gpu decode instead of going through an diffrent pipeline and then going to gpu, direct d3d11 access cz IMF ofcourse)
 - Uses **Windows Media Foundation** for native decoding and optimized performance
 - Smooth playback even on lower-end hardware
+- Mpv with HIGH res codecs with EWA lancing and frame interpolation to give the best output if you have the gpu for it
 - Free integrated wallpaper store
 - Taskbar configuration options
 - Manual wallpaper uploads supported
 - Interactive wallpapers with music supports.
 - Clear and accessible settings
 - Multi Monitor support
-- Mpv with HIGH res codecs with EWA lancing and frame interpolation to give the best output if you have the gpu for it.
 - Proper thread and access violation fixes with the best possible ui unmounting i knew, to give the best ui i could and also make it take no resources when it's hidden in systray <.3
 - Automatic power-saving: pauses video when windows are maximized or focused
 - **Unified Search**: retrieve results from all sources in a single query
