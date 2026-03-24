@@ -20,7 +20,6 @@ function App() {
     const { isVisible } = useVisibility();
     const [isLoading, setIsLoading] = React.useState(true);
     const [activeTab, setActiveTab] = React.useState('home');
-    // debounce guard — prevents rapid tab switches from stacking multiple re-renders
     const tabSwitchTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
     const [browsingSource, setBrowsingSource] = React.useState<string | null>(null);
     const [browsingLive, setBrowsingLive] = React.useState(false);
@@ -34,7 +33,6 @@ function App() {
         }
     });
 
-    // persist sidebar state to localstorage on every change
     const setIsSidebarExpanded = React.useCallback((expanded: boolean) => {
         setIsSidebarExpandedRaw(expanded);
         try {
@@ -137,7 +135,7 @@ function App() {
         }, 50);
     };
 
-    // Deep unmount the entire UI when hidden to ensure zero GPU usage.
+    // Deep unmount the entire UI when hidden to ensure zero GPU usage, yes this works just fine <.3 just pointing it out to any smartass looking
     if (!isVisible) {
         return null;
     }
