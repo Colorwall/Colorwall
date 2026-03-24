@@ -4,8 +4,8 @@
 
 ---
 # ColorWall
-[colorwall.xyz](https://colorwall.xyz)
-### https://colorwall.xyz
+[FEEDBACK](https://www.colorwall.xyz/FEEDBACK)
+## https://www.colorwall.xyz
 
 ### A Highly Performant Wallpaper Engine Built in Rust/Tauri, No bloat, Desktop costumization In One place for no cost.
 **Designed for Performance • Ease of Usage • Optimization Enthusiasts • People who don't want thier pc to die • From Igpu tp RTX gpus offering presets and twio *Renderers* as per liking**
