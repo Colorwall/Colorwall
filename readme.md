@@ -5,6 +5,7 @@
 ---
 # ColorWall
 [colorwall.xyz](https://colorwall.xyz)
+### https://colorwall.xyz
 
 ### A Highly Performant Wallpaper Engine Built in Rust/Tauri, No bloat, Desktop costumization In One place for no cost.
 **Designed for Performance • Ease of Usage • Optimization Enthusiasts • People who don't want thier pc to die • From Igpu tp RTX gpus offering presets and twio *Renderers* as per liking**
@@ -32,7 +33,7 @@ Under Dev
 ColorWall is currently closed-source bcz we don't need some looser to steal it and rebrand it to "Wallpaper Pro" and sell it, anyone can copy a working logic and change the front-end. 
 We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time. Respectfully, fuck off to vibe coders who i know will copy this in a heartbeat.
 So  we want to ensure that we establish our certificates and **recoganization** first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs. 
-## We are not fucking Jesus to not want anything for providing a whole desktop costumization engine, the least we deserve is recoganization, 
+## We are not fucking Jesus to not want anything for providing a whole desktop costumization engine, the least we need is recoganization :< 
 ### code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything instantly, like i am literally 18 brother, studying to be a cop and in collage too >.<
 - To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
 
