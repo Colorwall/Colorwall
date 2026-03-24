@@ -6,7 +6,7 @@
 
 # ColorWall
 
-[DOES THY WANT TO GIVE FEEDBACK? HERE <.3](https://www.colorwall.xyz/FEEDBACK)
+[DOES THY WANT TO GIVE FEEDBACK? HERE <.3](https://www.colorwall.xyz/feedback)
 
 ## https://www.colorwall.xyz
 
