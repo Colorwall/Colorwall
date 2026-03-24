@@ -39,7 +39,7 @@ ColorWall is currently closed-source bcz we don't need some looser to steal it a
 
 So we want to ensure that we establish our certificates and **recoganization** first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs.
 
-### We are not fucking Jesus to not want anything for providing a whole desktop costumization engine and we don't even Get recoganization, cz someone else took it now we brokies can't do anything about it:-
+### We are not Jesus, So we need some recoganization atleast for the software <.3, and if we opensource it rn, we might not even get the bare minimum of that cz someone else MIGHT copy paste it and we can't do anything about it:-
 
 - code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything instantly, like i am literally 18 brother, studying to be a cop and in collage too >.<
 - To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
