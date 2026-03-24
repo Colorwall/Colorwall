@@ -6,8 +6,8 @@
 # ColorWall
 [colorwall.xyz](https://colorwall.xyz)
 
-### A Free Wallpaper Engine Alternative Built in Rust  
-**Designed for Performance • Optimization Enthusiasts • Everyday Users • Low-Spec PCs**
+### A Highly Performant Wallpaper Engine Built in Rust/Tauri, No bloat, Desktop costumization In One place for no cost.
+**Designed for Performance • Ease of Usage • Optimization Enthusiasts • People who don't want thier pc to die • From Igpu tp RTX gpus offering presets and twio *Renderers* as per liking**
 Under Dev 
 
 
@@ -16,7 +16,7 @@ Under Dev
 [![Release](https://img.shields.io/github/v/release/laxenta/WallpaperEngine?style=flat-square&color=blue)](https://github.com/laxenta/WallpaperEngine/releases)
 [![License](https://img.shields.io/github/license/laxenta/WallpaperEngine?style=flat-square)](LICENSE)
 
-> **~0.5% CPU / 3–8% GPU • 4K Video Wallpapers • 6+ Auto-Scraped Sources**  
+> **~0.5% CPU / 3–8% GPU • 4K Video Wallpapers • 6+ Auto-Scraped Sources • Perf/Ultra Rendering Engines**  
 >
 > *No infrastructure required — the application runs locally and works fully offline.*
 
@@ -28,10 +28,11 @@ Under Dev
 
 ---
 
-## 📂 Source Code Status
-ColorWall is TEMPROARILY closed-source as in today's time of A.I, anyone can copy a working logic and change the front-end. 
-We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time
-and we want to ensure that we establish our certificates and things first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs. 
+## Source Code Status
+ColorWall is currently closed-source bcz we don't need some looser to steal it and rebrand it to "Wallpaper Pro" and sell it, anyone can copy a working logic and change the front-end. 
+We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time. Respectfully, fuck off to vibe coders who i know will copy this in a heartbeat.
+So  we want to ensure that we establish our certificates and **recoganization** first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs. 
+## We are not fucking Jesus to not want anything for providing a whole desktop costumization engine, the least we deserve is recoganization, code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything.
 - To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
@@ -40,6 +41,7 @@ If you would like to support the project and help accelerate open-sourcing effor
 Community support directly helps with licensing, signing certificates, and long-term development.
 
 Transparency and community collaboration remain long-term goals of this project.
+<img src="https://komarev.com/ghpvc/?username=LaxentaInc&color=00B4D8&style=flat-square"/>
 
 
 ---
@@ -48,7 +50,7 @@ Transparency and community collaboration remain long-term goals of this project.
 
 - **Wallpaper Engine** requires a paid license and relies on the Steam Workshop ecosystem.
 - **Lively Wallpaper** is free but may consume significantly more GPU resources.
-- **ColorWall** is free, optimized for performance, and automatically aggregates art and wallpapers from multiple sources — minimizing manual effort.
+- **ColorWall** is free, optimized for performance, has a sourced store, and we don't store any of those wallpapers, we also offer multiple Renderers/ Perfromance presets! <.3
 
 ### Performance Benchmark (Single Snapshot Test)
 
