@@ -1,6 +1,7 @@
 <div align="center">
 
 <img width="1536" height="1024" alt="LxColorWall" src="https://github.com/user-attachments/assets/a0455f0b-c580-4904-a8a1-da9680bf16d3" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ebc62a7-b1ec-4e4d-9264-f14f325dbf46" />
 
 ---
 
