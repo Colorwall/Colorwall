@@ -42,8 +42,7 @@ So we want to ensure that we establish our certificates and **recoganization** f
 
 ### We are not Jesus, So we need some recoganization atleast for the software <.3, and if we opensource it rn, we might not even get the bare minimum of that cz someone else MIGHT copy paste it and we can't do anything about it:-
 
-- code will be open source, but u HAVE TO WAIT MAN. We not rich to get certificates and register everything instantly, like i am literally 18 brother, studying to be a cop and in collage too >.<
-- To ensure sustainability and proper release management, we plan to open-source the project once distribution infrastructure is secured.
+- code might or might not be opensource, No one cares about it i think, if in future people do care, i will consider it
 
 If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
 
