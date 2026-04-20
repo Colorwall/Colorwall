@@ -19,7 +19,7 @@ Under Dev
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)](https://www.rust-lang.org)
 [![Tauri](https://img.shields.io/badge/Tauri-FFC131?style=flat-square&logo=tauri&logoColor=black)](https://tauri.app)
-[![Release](https://img.shields.io/github/v/release/Colorwall/Colorwall?style=flat-square&color=blue)](https://github.com/laxenta/WallpaperEngine/releases)
+[![Release](https://img.shields.io/github/v/release/Colorwall/Colorwall?style=flat-square&color=blue)](https://github.com/Colorwall/Colorwall/releases)
 [![License](https://img.shields.io/github/license/Colorwall/Colorwall?style=flat-square)](LICENSE)
 
 > **3–8% GPU Usage on a low end IGPU • 4KVsync Video Wallpapers • 9+ Auto-Scraped Sources • Perf/Ultra Rendering Engines**
