@@ -34,18 +34,6 @@ Under Dev
 
 ---
 
-## Source Code Status
-
-ColorWall is currently closed-source bcz we don't need some looser to steal it and rebrand it to "Wallpaper Pro" and sell it, anyone can copy a working logic and change the front-end. We will be devloping another Desktop Modification Engine for linux and another app for android and multiple services, so we need time. Respectfully, fuck off to vibe coders who i know will copy this in a heartbeat.
-
-So we want to ensure that we establish our certificates and **recoganization** first, so Publishing to the Microsoft Store, steam etc. requires a developer license and related costs.
-
-### To be clear We are not Jesus, if we opensource it rn, we might not even get the bare minimum of that cz someone else MIGHT steal it simply:-
-
-- code might or might not be opensource, No one cares about it i think, if in future people do care, i will consider it
-
-If you would like to support the project and help accelerate open-sourcing efforts, you can contribute here:
-
 👉 https://ko-fi.com/laxenta
 
 Community support directly helps with licensing, signing certificates, and long-term development.
@@ -101,7 +89,7 @@ Transparency and community collaboration remain long-term goals of this project.
 
 > **SmartScreen Notice:**
 > If a "Windows protected your PC" message appears, select **More info → Run anyway**.
-> The application is not code-signed due to certificate costs. The project is fully open source.
+> The application is not code-signed due to certificate costs. 
 
 ---
 
