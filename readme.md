@@ -28,7 +28,7 @@ Under Dev
 
 [Download](#-installation)
 
-### And to anyone wondering, this project is made alone by @LaxentaInc, it's been almost 8 months making this app which started as just a way to compete with my gf's ArchiveTune project <.3 (we broke up)
+### And to anyone wondering, this project is made alone by @LaxentaInc, it's been almost 11 months making this app which started as just a way to compete with my gf's ArchiveTune project <.3 (we broke up)
 
 </div>
 
