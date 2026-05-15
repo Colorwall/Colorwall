@@ -26,7 +26,7 @@ Under Dev
 >
 > *No infrastructure required, the application runs locally and works fully offline if u keep stuff in store or upload your own, Store will not work when offline*
 
-[Download](#-installation) • [✨ Features](#-features) • [Screenshots](#-screenshots) • [Build](#-build-from-source)
+[Download](#-installation)
 
 ### And to anyone wondering, this project is made alone by @LaxentaInc, it's been almost 8 months making this app which started as just a way to compete with my gf's ArchiveTune project <.3 (we broke up)
 
