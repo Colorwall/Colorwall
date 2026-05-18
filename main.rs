@@ -1,6 +1,5 @@
 // prevents console window on windows in release builds
 // main tauri entry point for loading everything together
-// saving on github for reference.
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::{Manager, WindowEvent};
@@ -10,13 +9,57 @@ use wallpaperengine::core::player::app_management::start_renderer_watchdog;
 use wallpaperengine::core::player::manager::shutdown_video_wallpaper;
 use wallpaperengine::core::player::state::periodic_state_save;
 use wallpaperengine::core::telemetry::{
-    add_breadcrumb, capture_error, init_sentry, wait_for_system_ready, BreadcrumbType,
+    add_breadcrumb, capture_error, init_sentry, BreadcrumbType,
 };
+use wallpaperengine::core::lifecycle::wait_for_system_ready;
 use wallpaperengine::platform::windows::interactive::watchdog::start_interactive_watchdog;
 use wallpaperengine::ui::commands::*;
 
+// helper to apply window vibrancy
+fn apply_vibrancy_if_enabled(app: tauri::AppHandle) {
+    tauri::async_runtime::spawn(async move {
+        // small delay to ensure window is ready
+        tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
+        if let Ok(response) = get_settings().await {
+            if let Some(settings) = response.settings {
+                if settings.window_vibrancy {
+                    let _ = set_window_vibrancy(app, true);
+                }
+            }
+        }
+    });
+}
+
+// helper to create or show the main ui window
+fn show_main_window(app: &tauri::AppHandle) {
+    if let Some(window) = app.get_webview_window("main") {
+        let _ = window.show();
+        let _ = window.set_focus();
+        let _ = window.unminimize();
+        println!("[main] existing window focused");
+    } else {
+        println!("[main] window doesn't exist, recreating...");
+        use tauri::{WebviewUrl, WebviewWindowBuilder};
+        let _ = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
+            .title("ColorWall - Wallpaper Engine")
+            .inner_size(1000.0, 900.0)
+            .resizable(true)
+            .decorations(false)
+            .transparent(true)
+            .build();
+
+        if let Some(window) = app.get_webview_window("main") {
+            let _ = window.show();
+            let _ = window.set_focus();
+        }
+    }
+
+    // reapply vibrancy settings to ensure they are active after showing
+    apply_vibrancy_if_enabled(app.clone());
+}
+
 fn main() {
-    // Check if running in autostart mode (silently from system tray) - Will be diffrent for linux i think :)
+    // Check if running in autostart mode (silently from system tray)
     let args: Vec<String> = std::env::args().collect();
     let is_autostart = args
         .iter()
@@ -42,29 +85,8 @@ fn main() {
         .plugin(
             tauri_plugin_single_instance::init(|app, _argv, _cwd| {
                 // when a second instance is launched, focus the existing window
-                println!("[main] Second instance detected, focusing existing window");
-                
-                if let Some(window) = app.get_webview_window("main") {
-                    let _ = window.show();
-                    let _ = window.set_focus();
-                    let _ = window.unminimize();
-                    println!("[main] Existing window focused");
-                } else {
-                    println!("[main] Window doesn't exist, recreating...");
-                    use tauri::{WebviewUrl, WebviewWindowBuilder};
-                    let _ = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
-                        .title("ColorWall - Wallpaper Engine")
-                        .inner_size(1000.0, 900.0)
-                        .resizable(true)
-                        .decorations(false)
-                        .transparent(true)
-                        .build();
-                    
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.show();
-                        let _ = window.set_focus();
-                    }
-                }
+                println!("[main] second instance detected, focusing existing window");
+                show_main_window(app);
             })
         )
         .invoke_handler(tauri::generate_handler![
@@ -117,6 +139,8 @@ fn main() {
             import_interactive_wallpaper,
             set_interactive_wallpaper,
             stop_interactive_wallpaper,
+            stop_interactive_wallpaper_on_monitor,
+            get_active_interactive_monitors,
             get_interactive_properties,
             update_interactive_property,
             delete_interactive_wallpaper,
@@ -158,25 +182,14 @@ fn main() {
         ])
         .setup(move |app| {
             add_breadcrumb(BreadcrumbType::Lifecycle, "Tauri app setup started", None);
+
+            // Initialize Discord RPC in the background
             wallpaperengine::core::discord_rpc::init_discord_rpc();
+
             let window = app.get_webview_window("main").unwrap();
-            #[cfg(target_os = "windows")]
-            {
-                let app_handle = app.handle().clone();
-                tauri::async_runtime::spawn(async move {
-                    // Small delay to ensure window is ready
-                    tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
-                    
-                    // Check settings and apply vibrancy if enabled
-                    if let Ok(response) = get_settings().await {
-                        if let Some(settings) = response.settings {
-                            if settings.window_vibrancy {
-                                let _ = set_window_vibrancy(app_handle, true);
-                            }
-                        }
-                    }
-                });
-            }
+
+            // restore window vibrancy from settings
+            apply_vibrancy_if_enabled(app.handle().clone());
 
             let _app_handle = app.handle().clone();
             let window_clone = window.clone();
@@ -213,45 +226,24 @@ fn main() {
                 .on_menu_event(move |app, event| match event.id.as_ref() {
                     "show" => {
                         add_breadcrumb(BreadcrumbType::UI, "Show window from tray menu", None);
-                        
-                        if app.get_webview_window("main").is_none() {
-                            use tauri::{WebviewUrl, WebviewWindowBuilder};
-                            let _ = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
-                                .title("ColorWall - Wallpaper Engine")
-                                .inner_size(1000.0, 900.0)
-                                .resizable(true)
-                                .decorations(false)
-                                .transparent(true)
-                                .build();
-                        }
-
-                        if let Some(window) = app.get_webview_window("main") {
-                            let _ = window.show();
-                            let _ = window.set_focus();
-                            
-                            // REAPPLY VIBRANCY SETTINGS TO ENSURE THEY ARE ACTIVE AFTER SHOWING
-                            // IDK IF THIS IS IMPORTANT OR REDUNDANT TBH BUT I THINK IT IS NOTHING BAD [are we are duping? i will fix it later]
-                            #[cfg(target_os = "windows")]
-                            {
-                                let app_handle = app.clone();
-                                tauri::async_runtime::spawn(async move {
-                                    if let Ok(response) = get_settings().await {
-                                        if let Some(settings) = response.settings {
-                                            if settings.window_vibrancy {
-                                                let _ = set_window_vibrancy(app_handle, true);
-                                            }
-                                        }
-                                    }
-                                });
-                            }
-                        }
+                        show_main_window(app);
                     }
                     "quit" => {
                         add_breadcrumb(BreadcrumbType::Lifecycle, "Quit requested from tray", None);
                         
                         println!("[main] Quit requested from tray");
+                        // stop interactive webviews (iw_*) and clear WEB_PLAYER_LABELS so the
+                        // forwarder threads (audio/mouse/system/media) see an empty label set
+                        // and exit their loops cleanly instead of firing one more cycle into
+                        // a dead webview. shutdown_video_wallpaper doesn't touch these —
+                        // it only kills the separate wallpaper-player.exe child processes.
+                        let _ = wallpaperengine::platform::windows::interactive::player::stop_all_interactive_wallpapers(&app_handle_for_tray);
+                        // widget host windows (wh_*) are also tauri webviews but they get
+                        // destroyed automatically by app.exit() below, no explicit stop needed.
+                        // shutdown_video_wallpaper → stop_all_players() sends STOP via named
+                        // pipe, waits up to 1s for graceful exit, then force-kills. by the time
+                        // it returns, all player processes are dead no extra sleep needed.
                         let _ = shutdown_video_wallpaper(&app_handle_for_tray);
-                        std::thread::sleep(std::time::Duration::from_millis(500));
                         app.exit(0);
                     }
                     _ => {}
@@ -262,46 +254,8 @@ fn main() {
                         ..
                     } = event
                     {
-                        // Recreate
-                        if tray.app_handle().get_webview_window("main").is_none() {
-                            add_breadcrumb(BreadcrumbType::UI, "Recreating window from tray click", None);
-                            
-                            println!("[main] Window doesn't exist, recreating from tray");
-                            use tauri::{WebviewUrl, WebviewWindowBuilder};
-                            let _ = WebviewWindowBuilder::new(
-                                tray.app_handle(),
-                                "main",
-                                WebviewUrl::default(),
-                            )
-                            .title("ColorWall - Wallpaper Engine")
-                            .inner_size(1000.0, 900.0)
-                            .resizable(true)
-                            .decorations(false)
-                            .transparent(true)
-                            .build();
-                        }
-
-                        if let Some(window) = tray.app_handle().get_webview_window("main") {
-                            let _ = window.show();
-                            let _ = window.set_focus();
-                            println!("[main] Window shown from tray icon click");
-                            
-                            // REAPPLY VIBRANCY SETTINGS TO ENSURE THEY ARE ACTIVE AFTER SHOWING
-                            // This fixes the white/light mode issue when restoring from tray
-                            #[cfg(target_os = "windows")]
-                            {
-                                let app_handle = tray.app_handle().clone();
-                                tauri::async_runtime::spawn(async move {
-                                    if let Ok(response) = get_settings().await {
-                                        if let Some(settings) = response.settings {
-                                            if settings.window_vibrancy {
-                                                let _ = set_window_vibrancy(app_handle, true);
-                                            }
-                                        }
-                                    }
-                                });
-                            }
-                        }
+                        add_breadcrumb(BreadcrumbType::UI, "Show window from tray click", None);
+                        show_main_window(tray.app_handle());
                     }
                 })
                 .build(app)
@@ -310,7 +264,6 @@ fn main() {
             add_breadcrumb(BreadcrumbType::UI, "System tray initialized", None);
 
             // init Taskbar
-            #[cfg(target_os = "windows")]
             {
                 use wallpaperengine::platform::windows::os::taskbar::init_taskbar_keeper;
                 init_taskbar_keeper();
@@ -343,6 +296,7 @@ fn main() {
                     }
                 }
                 
+                // wallpaper restoration — iassets download removed from startup (now user-triggered)
                 // wait for system to be fully ready
                 let system_ready = wait_for_system_ready(15).await;
                 
@@ -393,7 +347,6 @@ fn main() {
                 }
                 
                 // also try to restore global widgets
-                #[cfg(target_os = "windows")]
                 {
                     println!("[startup] attempting widget restoration");
                     wallpaperengine::platform::windows::interactive::widget_host::restore_global_widgets(&app_handle);
@@ -414,7 +367,7 @@ fn main() {
                 }
             });
 
-            // renderer watchdog — auto-restarts crashed wallpaper-player processes
+            // renderer watchdog, auto-restarts crashed wallpaper-player processes ( will add for scenes too, but its all under work, kinda pain)
             start_renderer_watchdog(app.handle().clone());
             start_interactive_watchdog(app.handle().clone());
 
